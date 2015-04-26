@@ -1,8 +1,10 @@
+library(dplyr)
 # run_analysis.R
 # Use this script to merge the two data sets.
 
 # Instructions:
 # 1. Set your working directory correctly.
+# 2. Make sure you have dyplr library installed.
 
 # Read activity_labels.txt file
 # Each row of this file contains an id and activity labels 
