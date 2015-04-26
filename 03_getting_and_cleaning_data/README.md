@@ -10,5 +10,10 @@ You should create one R script called run_analysis.R that does the following:
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 #### Merges the training and the test sets to create one data set:
-The merged file can be found here:
+The merged file can be found here: 
+
 https://github.com/guillec/datasciencecoursera/blob/master/03_getting_and_cleaning_data/merged_datat.txt
+
+This merged file contains all the data in the train and test directories of the data set. It is ordered by activityid and subject. The feature label and activity labels were edited to read easier.
+
+
