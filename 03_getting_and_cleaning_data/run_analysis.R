@@ -121,3 +121,6 @@ mean_and_std <- combined_data_set[,grepl(".*([Mm]ean|[Ss]td|[Aa]ctivitylabel|[Ss
 
 # Table with the mean of each table column
 mean_of_columns <- mean_and_std %>% group_by(subject, activitylabel) %>% summarise_each(funs(mean))
+
+# Export table to txt without rownames
+write.table(mean_of_columns, './mean_of_each_variable.txt', row.names=FALSE)
