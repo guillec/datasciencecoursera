@@ -2,7 +2,7 @@
 
 ## Data description:
 
-  This dataset contains the means of each feature and it is ordered by activitylabel and subject. The measurments come from either the acceleromenter of gyroscope 3-axial raw signals.
+  This dataset contains the means for multiple different measurements taken from either a acceleromenter or gyroscope 3-axial raw signals. Raw time and frequency measurments were then passed into a filter to gain body, gravity and jerk signal measurements. Finally the magnitude of these signals were also calculated.
 
 ## Column description:
 
@@ -16,10 +16,9 @@
 
       Label of the activity that was performed by the subject.
 
-  The next 86 columns contain average measurements for the different features. The columns will calculating the average of either a mean or a standard deviation. Columns dealing with a mean measurement will easily be identified with the word Mean. Standard deviation columns will be denoted with the abbreviation of std or Std.
+  The next 86 columns contain average measurements for the different signals. The columns calculate the average of either a mean or a standard deviations. Columns dealing with a mean measurement will easily be identified with the word Mean. Standard deviation columns will be denoted with the abbreviation of std or Std.
 
   If a column ends with X, Y or Z, it is referring to a measurement based on a direction. The XYZ letters are used to denote the 3-axial signals in the X, Y and Z direction.
- 
 
     #### timeBodyAccelerometerMeanX
       Average time recorded by the accelerometer body signal for X direction
@@ -261,10 +260,24 @@
     #### frequencyBodyGyroscopeJerkMagnitudeStd
       Standard deviation in frequency of magnitude recorded by the gyroscope body and jerk signal
 
-    #### averageSignalBetweentimeBodyAccelerometerMeanAndGravity"        
+    #### averageSignalBetweentimeBodyAccelerometerMeanAndGravity
+      Average Signal Between the accelerometer measurement of body and gravity signal in time
+
     #### averageSignalBetweentimeBodyAccelerometerJerkMeanAndGravityMean
+      Average Signal Between the accelerometer measurement of jerk and gravity signal in time
+
     #### averageSignalBetweentimeBodyGyroscopeMeanAndGravityMean        
+      Average Signal Between the gyroscope measurement of body and gravity signal in time
+
     #### averageSignalBetweentimeBodyGyroscopeJerkMeanAndGravityMean
+      Average Signal Between the gyroscope measurement of jerk and gravity signal in time
+
     #### averageSignalBetweenXAndGravityMean                            
+      Average signal mesasurment between X direction and gravity measurements
+
     #### averageSignalBetweenYAndGravityMean                            
+      Average signal mesasurment between Y direction and gravity measurements
+
     #### averageSignalBetweenZAndGravityMean
+      Average signal mesasurment between Z direction and gravity measurements
+
