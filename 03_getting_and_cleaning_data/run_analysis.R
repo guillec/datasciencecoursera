@@ -1,9 +1,10 @@
 library(dplyr)
-# run_analysis.R
-# Use this script to merge the two data sets.
 
+# run_analysis.R
+#
 # Instructions:
-# 1. Set your working directory correctly.
+# 1. Set your working directory correctly. 
+#   - To run this script your working directory should be the same as the path to this script.
 # 2. Make sure you have dyplr library installed.
 
 # Read activity_labels.txt file
@@ -83,21 +84,11 @@ labeled_activities <- activity_labels$V2[combined_data_set$activity]
 
 combined_data_set["activitylabel"] <- labeled_activities
 
-# Export table to txt without rownames
-write.table(combined_data_set, './merged_datat.txt', row.names=FALSE)
-
-####################################
-# Extract means and std measurements
-####################################
-
-# Extracts only the measurements on the mean and standard deviation for each measurement.
-mean_and_std <- combined_data_set[,grepl(".*([Mm]ean|std|activitylabel|subject).*", names(combined_data_set))]
-
 ####################################
 # Clean up feature label names
 ####################################
 
-better_features <- gsub("_", "", colnames(mean_and_std))
+better_features <- gsub("_", "", colnames(combined_data_set))
 better_features <- gsub("fBody", "frequencyBody", better_features)
 better_features <- gsub("frequencyBodyBody", "frequencyBody", better_features)
 better_features <- gsub("tBody", "timeBody", better_features)
@@ -116,7 +107,17 @@ better_features <- gsub(",", "And", better_features)
 better_features <- gsub("gravity", "Gravity", better_features)
 
 # Rename colnames with better labels
-names(mean_and_std) <- better_features
+names(combined_data_set) <- better_features
+
+# Export table to txt without rownames
+write.table(combined_data_set, './merged_datat.txt', row.names=FALSE)
+
+####################################
+# Extract means and std measurements
+####################################
+
+# Extracts only the measurements on the mean and standard deviation for each measurement.
+mean_and_std <- combined_data_set[,grepl(".*([Mm]ean|[Ss]td|[Aa]ctivitylabel|[Ss]ubject).*", names(combined_data_set))]
 
 # Table with the mean of each table column
 mean_of_columns <- mean_and_std %>% group_by(subject, activitylabel) %>% summarise_each(funs(mean))
