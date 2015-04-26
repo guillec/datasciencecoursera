@@ -46,5 +46,5 @@ The run_analysis.R script expects the data to be in a directory called Dataset. 
 #### About the output
 The run_analysis.R script outputs two file. 
 
-  * First in the merge test and train data. 
-  * Second is the average of the mean and std (standard deviation) for each featrue.
+  1. The merged test and train data. 
+  2. The average of the mean and std (standard deviation) for each featrue.
