@@ -1,6 +1,6 @@
 # Getting and Cleaning Data Course Project
 
-### Instructions
+### Course Project Instructions
 You should create one R script called run_analysis.R that does the following:
 
 * Merges the training and the test sets to create one data set.
@@ -33,3 +33,18 @@ Results can be found in the exported txt files.
 The tidy data can be found here:
 
 https://github.com/guillec/datasciencecoursera/blob/master/03_getting_and_cleaning_data/mean_of_each_variable.txt
+
+### Instruction for run_analysis.R
+
+1. git clone this repo
+2. Set your working directoy to the cloned directory in step 1
+3. Make sure you have the dplyr package install
+
+#### Location of the dataset
+The run_analysis.R script expects the data to be in a directory called Dataset. Please look at the structure of the Dataset directory you cloned in step 1.
+
+#### About the output
+The run_analysis.R script outputs two file. 
+
+  * First in the merge test and train data. 
+  * Second is the average of the mean and std (standard deviation) for each featrue.
